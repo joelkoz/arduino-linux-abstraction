@@ -2,27 +2,27 @@
 #include <fcntl.h>
 #include "Arduino.h"
 
-void SerialMock::begin(uint64_t) {
+void SerialLinux::begin(uint64_t) {
 
 }
 
-void SerialMock::println() {
+void SerialLinux::println() {
     std::cout << std::endl;
 }
 
-void SerialMock::print(const char toPrint) {
+void SerialLinux::print(const char toPrint) {
     std::cout << toPrint<< std::flush;
 }
 
-void SerialMock::println(const char toPrint) {
+void SerialLinux::println(const char toPrint) {
     std::cout << toPrint << std::endl;
 }
 
-void SerialMock::print(const char *toPrint) {
+void SerialLinux::print(const char *toPrint) {
     std::cout << toPrint << std::flush;
 }
 
-void  SerialMock::println(const char *toPrint) {
+void  SerialLinux::println(const char *toPrint) {
     std::cout << toPrint << std::endl;
 }
 

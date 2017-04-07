@@ -32,7 +32,7 @@ extern void randomSeed(uint16_t seed);
 #endif // DATABASE_ARDUINO_TIMERS_H
 #endif
 
-class SerialMock {
+class SerialLinux {
 
 public:
     void begin(uint64_t);
