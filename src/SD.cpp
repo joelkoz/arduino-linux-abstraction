@@ -4,23 +4,23 @@
 
 
 
-bool SD::begin(uint8_t csPin/* = SD_CHIP_SELECT_PIN*/) {
+bool SDLinux::begin(uint8_t csPin/* = SD_CHIP_SELECT_PIN*/) {
     _begin = true;
     std::system(("mkdir --parents " + _rootPath).c_str());
     return true;
 }
 
 
-void SD::setRootPath(std::string rootPath) {
+void SDLinux::setRootPath(std::string rootPath) {
     _rootPath = rootPath;
 }
 
 
-SD::~SD() {
+SDLinux::~SDLinux() {
 }
 
 
-File SD::open(const char *filename, uint8_t mode) {
+File SDLinux::open(const char *filename, uint8_t mode) {
     std::string fullPath = _rootPath+ "/" + filename;
     std::system(("touch " + fullPath).c_str());
 
@@ -39,13 +39,13 @@ File::File(const char *fullPath, const char *name, bool rw) {
     _read = rw;
 }
 
-bool SD::exists(const char *filepath) {
+bool SDLinux::exists(const char *filepath) {
     std::string full_path = _rootPath +  filepath;
     struct stat buffer;
     return (stat(full_path.c_str(), &buffer) == 0);
 }
 
-bool SD::remove(const char *filepath) {
+bool SDLinux::remove(const char *filepath) {
     return !std::remove(filepath);
 }
 

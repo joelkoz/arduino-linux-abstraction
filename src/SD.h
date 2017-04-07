@@ -45,13 +45,13 @@ public:
     void close();
 
 };
-class SD {
+class SDLinux {
 public:
     std::string _rootPath ;
 private:
     bool _begin = false;
 public:
-    ~SD();
+    ~SDLinux();
 
     void setRootPath(std::string rootPath);
 
