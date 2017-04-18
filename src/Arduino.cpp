@@ -11,7 +11,7 @@ void SerialLinux::println() {
 }
 
 void SerialLinux::print(const char toPrint) {
-    std::cout << toPrint<< std::flush;
+    std::cout << toPrint << std::flush;
 }
 
 void SerialLinux::println(const char toPrint) {
@@ -22,7 +22,7 @@ void SerialLinux::print(const char *toPrint) {
     std::cout << toPrint << std::flush;
 }
 
-void  SerialLinux::println(const char *toPrint) {
+void SerialLinux::println(const char *toPrint) {
     std::cout << toPrint << std::endl;
 }
 
@@ -39,6 +39,11 @@ void delay(uint64_t time) {
 
 int64_t timerValue = 0;
 bool timerValueCalled = false;
+
+void resetTimerValue() {
+    timerValueCalled = false;
+}
+
 
 int64_t millis() {
     if (!timerValueCalled) {
@@ -61,7 +66,7 @@ int64_t millis() {
     return diff;
 }
 
-void yield() { }
+void yield() {}
 
 int64_t random(int64_t min, int64_t max) {
     return rand() % max + min;

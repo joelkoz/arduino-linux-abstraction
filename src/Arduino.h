@@ -19,6 +19,8 @@
 
 extern void delay(uint64_t time);
 
+extern void resetTimerValue();
+
 extern int64_t millis();
 
 extern void yield();
@@ -38,6 +40,7 @@ public:
     void begin(uint64_t);
 
     void println();
+
     // char
     void print(const char toPrint);
 
