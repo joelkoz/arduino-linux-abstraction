@@ -7,7 +7,7 @@ One interface is the SerialLinux class which fakes Arduino Serial print[https://
 We use it for logging to the console for the mqtt-sn gateway.
 The second interface is the SDLinux class which fakes Arduino's SD Card Library calls[https://www.arduino.cc/en/Reference/SD].
 For this we used a ESP8266 and MH SD Card Module with the Arduino Environment for testing the exact behaviour of the SD Card Library by using the examples given by the Arduino Framework and then reimplement the behaviour into the SDLinux class.
-The SD Card Library works with FAT32 and FAT32 file system. It must be considered that it only uses short 8.3 names for files, meaning the longest names for files is eight literals or numbers then a point and then additional three literals or numbers. This is of course a restriction we need to consider in the implementation of the Persistent interface.
+The SD Card Library works with FAT32 and FAT32 file system. It must be considered that it only uses short 8.3 names for files, meaning the longest names for files is eight literals or numbers then a point and then additional three literals or numbers[https://support.microsoft.com/de-de/help/121007/how-to-disable-8-3-file-name-creation-on-ntfs-partitions]. This is of course a restriction we need to consider in the implementation of the Persistent interface.
 We formatted the SD Card to FAT32 and build hardware configuration on a breadboard (see img/SDCardTestBoard.jpg)
 
 
