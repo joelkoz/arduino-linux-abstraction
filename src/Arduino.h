@@ -17,6 +17,15 @@
 
 #include <chrono>
 
+
+extern void resetTimerValue();
+#if (RH_PLATFORM == RH_PLATFORM_RPI)
+//#include <wiringPi.h>
+#else
+extern void delay(uint64_t time);
+extern int64_t millis();
+#endif
+
 extern void delay(uint64_t time);
 
 extern void resetTimerValue();
