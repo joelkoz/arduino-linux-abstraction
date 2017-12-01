@@ -29,10 +29,6 @@ extern int64_t millis();
 
 #endif
 
-extern int64_t millis();
-
-extern void yield();
-
 extern int64_t random(int64_t min, int64_t max);
 
 extern int64_t random(int64_t min, int64_t max);
