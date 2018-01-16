@@ -26,16 +26,7 @@ void SerialLinux::println(const char *toPrint) {
     std::cout << toPrint << std::endl;
 }
 
-// DATABASE_ARDUINO_TIMERS_H
-void delay(uint64_t time) {
-    struct timespec tim;
-    uint64_t seconds = (uint64_t) time / 1000;
-    tim.tv_sec = seconds;
-    uint64_t nseconds = (time - seconds * 1000) * (uint64_t) 1000000000L;
-    tim.tv_nsec = nseconds;
-    nanosleep(&tim, (struct timespec *) NULL);
-    return;
-}
+
 
 int64_t timerValue = 0;
 bool timerValueCalled = false;
@@ -44,6 +35,7 @@ void resetTimerValue() {
     timerValueCalled = false;
 }
 
+#ifndef RH_PLATFORM
 
 int64_t millis() {
     if (!timerValueCalled) {
@@ -65,6 +57,18 @@ int64_t millis() {
     }
     return diff;
 }
+
+// DATABASE_ARDUINO_TIMERS_H
+void delay(uint64_t time) {
+    struct timespec tim;
+    uint64_t seconds = (uint64_t) time / 1000;
+    tim.tv_sec = seconds;
+    uint64_t nseconds = (time - seconds * 1000) * (uint64_t) 1000000000L;
+    tim.tv_nsec = nseconds;
+    nanosleep(&tim, (struct timespec *) NULL);
+    return;
+}
+#endif
 
 void yield() {}
 

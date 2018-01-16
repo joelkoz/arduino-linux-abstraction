@@ -19,14 +19,10 @@
 
 
 extern void resetTimerValue();
-#if (RH_PLATFORM == RH_PLATFORM_RPI)
-//#include <wiringPi.h>
-#else
-
+#ifndef RH_PLATFORM
 extern void delay(uint64_t time);
 
 extern int64_t millis();
-
 #endif
 
 extern void resetTimerValue();
