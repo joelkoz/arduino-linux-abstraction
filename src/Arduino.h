@@ -16,7 +16,7 @@
 #define DATABASE_ARDUINO_TIMERS_H
 
 #include <chrono>
-
+#include <cstdlib>
 
 extern void resetTimerValue();
 #ifndef RH_PLATFORM
