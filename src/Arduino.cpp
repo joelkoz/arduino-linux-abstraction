@@ -31,11 +31,12 @@ void SerialLinux::println(const char *toPrint) {
 int64_t timerValue = 0;
 bool timerValueCalled = false;
 
+
+#ifndef RH_PLATFORM
+
 void resetTimerValue() {
     timerValueCalled = false;
 }
-
-#ifndef RH_PLATFORM
 
 int64_t millis() {
     if (!timerValueCalled) {
