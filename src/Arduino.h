@@ -19,11 +19,11 @@
 #include <cstdlib>
 
 #ifndef RH_PLATFORM
+extern void resetTimerValue();
+
 extern void delay(uint64_t time);
 
 extern int64_t millis();
-
-extern void resetTimerValue();
 #endif
 
 
