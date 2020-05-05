@@ -18,14 +18,14 @@
 #include <chrono>
 #include <cstdlib>
 
-extern void resetTimerValue();
 #ifndef RH_PLATFORM
+extern void resetTimerValue();
+
 extern void delay(uint64_t time);
 
 extern int64_t millis();
 #endif
 
-extern void resetTimerValue();
 
 extern int64_t random(int64_t min, int64_t max);
 
